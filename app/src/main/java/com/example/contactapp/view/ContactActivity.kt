@@ -1,5 +1,6 @@
 package com.example.contactapp.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,6 +32,6 @@ class ContactActivity : AppCompatActivity(), ToolbarListener {
     }
 
     override fun onAddClick() {
-        Log.d("TAG", "onAddClick: ")
+        startActivity(Intent(this, AddContact::class.java))
     }
 }
