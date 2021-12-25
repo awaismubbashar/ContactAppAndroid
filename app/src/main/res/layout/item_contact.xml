@@ -30,7 +30,7 @@
             android:id="@+id/contact_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="@{viewmodel.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/contact_imageview"
             app:layout_constraintTop_toTopOf="@+id/contact_imageview"
@@ -46,7 +46,7 @@
             app:layout_constraintStart_toEndOf="@+id/contact_imageview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/contact_imageview"
-            android:text="24"
+            android:text="@{viewmodel.age}"
             android:inputType="number"
             android:layout_marginHorizontal="10dp"
             />
@@ -58,7 +58,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/contact_imageview"
             android:inputType="phone"
-            android:text="03344399899"
+            android:text="@{viewmodel.phoneNumber}"
             android:layout_marginHorizontal="10dp"
             />
 

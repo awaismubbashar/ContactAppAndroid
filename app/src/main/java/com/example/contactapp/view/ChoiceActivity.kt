@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.example.contactapp.R
+import com.example.contactapp.view.contact.ContactActivity
 
 class ChoiceActivity : AppCompatActivity() {
     lateinit var btnList: Button

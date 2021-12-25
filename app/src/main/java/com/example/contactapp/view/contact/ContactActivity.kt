@@ -1,14 +1,15 @@
-package com.example.contactapp.view
+package com.example.contactapp.view.contact
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.contactapp.R
 import com.example.contactapp.adapter.ContactAdapter
 import com.example.contactapp.databinding.ActivityContactBinding
+import com.example.contactapp.view.ToolbarListener
+import com.example.contactapp.view.addContact.AddContact
 import com.example.contactapp.viewmodel.ContactViewModel
 
 class ContactActivity : AppCompatActivity(), ToolbarListener {
@@ -29,6 +30,7 @@ class ContactActivity : AppCompatActivity(), ToolbarListener {
         binding.contactRecyclerview.adapter = adapter
         mviewmodel.toolbarListener=this
 
+        mviewmodel.getDataFromCursor(applicationContext)
     }
 
     override fun onAddClick() {

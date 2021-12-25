@@ -1,13 +1,10 @@
 package com.example.contactapp.viewmodel
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.contactapp.data.AppDBHelper
 import com.example.contactapp.model.Contact
-import com.example.contactapp.view.AddContactNavigator
-import com.example.contactapp.view.ContactActivity
+import com.example.contactapp.view.addContact.AddContactNavigator
 
 class AddContactViewModel: ViewModel() {
 
