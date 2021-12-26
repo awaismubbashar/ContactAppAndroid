@@ -1,5 +1,6 @@
 package com.example.contactapp.view.addContact
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.contactapp.R
 import com.example.contactapp.databinding.ActivityAddContactBinding
-import com.example.contactapp.viewmodel.AddContactViewModel
+import com.example.contactapp.view.contact.ContactActivity
 
 class AddContact : AppCompatActivity(), AddContactNavigator {
 
@@ -49,7 +50,7 @@ class AddContact : AppCompatActivity(), AddContactNavigator {
         binding.addAge.text.clear()
         binding.addNumber.text.clear()
 
-//        startActivity(Intent(this, ContactActivity::class.java))
+        startActivity(Intent(this, ContactActivity::class.java))
     }
 
 }

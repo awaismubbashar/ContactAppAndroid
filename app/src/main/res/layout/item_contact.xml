@@ -7,12 +7,13 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.contactapp.viewmodel.ContactItemViewModel" />
+            type="com.example.contactapp.view.contact.adapter.AdapterClickListenerViewmodel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{()->viewmodel.onClick()}">
 
         <ImageView
             android:id="@+id/contact_imageview"
@@ -28,10 +29,9 @@
 
         <TextView
             android:id="@+id/contact_name"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewmodel.name}"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/contact_imageview"
             app:layout_constraintTop_toTopOf="@+id/contact_imageview"
             app:layout_constraintBottom_toTopOf="@id/contact_age"
@@ -44,7 +44,6 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@+id/contact_imageview"
             app:layout_constraintStart_toEndOf="@+id/contact_imageview"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/contact_imageview"
             android:text="@{viewmodel.age}"
             android:inputType="number"
@@ -55,7 +54,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@+id/contact_imageview"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/contact_imageview"
             android:inputType="phone"
             android:text="@{viewmodel.phoneNumber}"

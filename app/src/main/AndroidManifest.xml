@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ContactApp">
         <activity
+            android:name=".view.contactDetail.ContactDetail"
+            android:exported="false" />
+        <activity
             android:name=".view.addContact.AddContact"
             android:exported="true" />
         <activity

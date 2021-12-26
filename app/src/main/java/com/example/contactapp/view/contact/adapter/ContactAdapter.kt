@@ -1,24 +1,28 @@
-package com.example.contactapp.adapter
+package com.example.contactapp.view.contact.adapter
 
-import android.content.Context
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactapp.R
-import com.example.contactapp.databinding.ActivityContactBinding
 import com.example.contactapp.model.Contact
 import android.view.LayoutInflater
 import com.example.contactapp.databinding.ItemContactBinding
-import com.example.contactapp.viewmodel.ContactItemViewModel
-
-//import android.view.View
 
 class ContactAdapter: RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     var contactsList = ArrayList<Contact>()
+    lateinit var mviewModel: AdapterClickListenerViewmodel
+    lateinit var listener: ItemListener
 
-    inner class ViewHolder(val binding: ItemContactBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemContactBinding) : RecyclerView.ViewHolder(binding.root), ItemClickListener {
+
         fun onBind(position: Int){
-            binding.viewmodel = ContactItemViewModel(contactsList[position])
+            mviewModel = AdapterClickListenerViewmodel(contactsList[position])
+            mviewModel.setItemClickListener(this)
+            binding.viewmodel = mviewModel
+        }
+
+        override fun onClick() {
+            listener.onClickListener()
         }
     }
 
@@ -33,6 +37,11 @@ class ContactAdapter: RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int {
         return contactsList.size
+    }
+
+    @JvmName("setListener1")
+    fun setListener(listener: ItemListener) {
+        this.listener = listener
     }
 
 }

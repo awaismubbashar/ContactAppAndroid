@@ -1,10 +1,9 @@
-package com.example.contactapp.viewmodel
+package com.example.contactapp.view.addContact
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import com.example.contactapp.data.AppDBHelper
 import com.example.contactapp.model.Contact
-import com.example.contactapp.view.addContact.AddContactNavigator
 
 class AddContactViewModel: ViewModel() {
 

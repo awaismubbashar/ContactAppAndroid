@@ -3,7 +3,7 @@ package com.example.contactapp.utils;
 import androidx.databinding.BindingAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.contactapp.adapter.ContactAdapter;
+import com.example.contactapp.view.contact.adapter.ContactAdapter;
 import com.example.contactapp.model.Contact;
 
 import java.util.ArrayList;

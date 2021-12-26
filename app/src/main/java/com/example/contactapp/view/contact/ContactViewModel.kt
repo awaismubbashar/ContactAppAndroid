@@ -1,8 +1,7 @@
-package com.example.contactapp.viewmodel
+package com.example.contactapp.view.contact
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import com.example.contactapp.data.AppDBHelper

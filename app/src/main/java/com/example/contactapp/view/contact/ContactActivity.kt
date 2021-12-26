@@ -6,13 +6,14 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.contactapp.R
-import com.example.contactapp.adapter.ContactAdapter
+import com.example.contactapp.view.contact.adapter.ContactAdapter
 import com.example.contactapp.databinding.ActivityContactBinding
 import com.example.contactapp.view.ToolbarListener
 import com.example.contactapp.view.addContact.AddContact
-import com.example.contactapp.viewmodel.ContactViewModel
+import com.example.contactapp.view.contact.adapter.ItemListener
+import com.example.contactapp.view.contactDetail.ContactDetail
 
-class ContactActivity : AppCompatActivity(), ToolbarListener {
+class ContactActivity : AppCompatActivity(), ToolbarListener, ItemListener {
 
     lateinit var binding: ActivityContactBinding
     lateinit var mviewmodel: ContactViewModel
@@ -31,9 +32,14 @@ class ContactActivity : AppCompatActivity(), ToolbarListener {
         mviewmodel.toolbarListener=this
 
         mviewmodel.getDataFromCursor(applicationContext)
+        adapter.setListener(this)
     }
 
     override fun onAddClick() {
         startActivity(Intent(this, AddContact::class.java))
+    }
+
+    override fun onClickListener() {
+        startActivity(Intent(this, ContactDetail::class.java))
     }
 }
